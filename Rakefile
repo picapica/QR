@@ -18,4 +18,6 @@ Motion::Project::App.setup do |app|
   app.provisioning_profile = "#{ENV['PROVISION_DIR'] || './mobileprovision'}/liulantao_development.mobileprovision"
 
   app.icons = ["icon-120.jpg"]
+
+  app.files_dependencies 'app/app_delegate.rb' => 'app/helpers/string.rb'
 end
