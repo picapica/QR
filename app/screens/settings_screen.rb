@@ -1,11 +1,12 @@
-class WelcomeScreen < PM::Screen
-  title "欢迎"._
+class SettingsScreen < PM::Screen
+  title "设置"._
+  tab_bar_item icon: "icons/24/basic-settings-icon.png", title: "设置"._
 
   def on_load
     set_attributes self.view, backgroundColor: UIColor.grayColor
     
     add UILabel.alloc.initWithFrame(self.view.frame, textContainer: nil),
-    text: "Welcome to #{App.name}!",
+    text: "设置 #{App.name}!",
     resize: [ :left, :right, :top ],
     background_color: UIColor.clearColor,
     text_color: UIColor.whiteColor,
@@ -17,9 +18,6 @@ class WelcomeScreen < PM::Screen
   end
 
   def on_appear
-    sleep 1.414
-    open_tab_bar HomeScreen.new(nav_bar: true), SettingsScreen.new(nav_bar: true)
-
   end
 
 end
